@@ -37,14 +37,14 @@ a { color: inherit; }
 .lead-copy { font-size: 1.35rem; line-height: 1.65; }
 .text-secondary { color: var(--muted) !important; line-height: 1.75; }
 
-.info-card, .skill-card, .project-card { border: 1px solid var(--line); border-radius: 1rem; background: #fff; box-shadow: 0 15px 45px rgba(20, 40, 70, .06); }
+.info-card, .skill-card { border: 1px solid var(--line); border-radius: 1rem; background: #fff; box-shadow: 0 15px 45px rgba(20, 40, 70, .06); }
 .info-card { padding: 2rem; }
-.info-card h3, .skill-card h3, .project-card h3 { font-weight: 800; }
+.info-card h3, .skill-card h3 { font-weight: 800; }
 .info-card h3 { font-size: 1.35rem; }
 .stat-badge { padding: .55rem .8rem; border-radius: 999px; color: #17459e; background: var(--blue-soft); font-weight: 800; white-space: nowrap; }
 .achievement { margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--blue); font-weight: 700; }
 .skill-card { padding: 1.6rem; transition: transform .2s ease, box-shadow .2s ease; }
-.skill-card:hover, .project-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(20, 40, 70, .11); }
+.skill-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(20, 40, 70, .11); }
 .skill-card h3 { margin-bottom: 1.25rem; font-size: 1.1rem; }
 .tag-list { display: flex; flex-wrap: wrap; gap: .55rem; }
 .tag-list span { padding: .45rem .7rem; border-radius: .5rem; color: #334155; background: var(--mist); font-size: .83rem; font-weight: 600; }
@@ -58,12 +58,25 @@ a { color: inherit; }
 .company { color: #a9b8c9; font-weight: 600; }
 .timeline ul { margin-bottom: 0; color: #c6d1de; line-height: 1.75; }
 
-.project-card { position: relative; display: flex; flex-direction: column; padding: 2rem; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
-.project-number { position: absolute; top: .5rem; right: 1rem; color: #edf2f9; font: 800 4.4rem/1 "Libre Franklin", sans-serif; }
-.project-card .card-label, .project-card h3, .project-card p, .project-card .tag-list { position: relative; }
-.project-card h3 { min-height: 3.3rem; font-size: 1.3rem; }
-.project-role { color: var(--blue); font-weight: 800; }
-.project-card > p:not(.card-label):not(.project-role) { color: var(--muted); line-height: 1.7; }
+.project-list { display: grid; gap: 1.6rem; }
+.project-card { overflow: hidden; border: 1px solid #303c4b; border-radius: 1rem; color: #e8eef6; background: #172231; box-shadow: 0 16px 40px rgba(13, 27, 42, .16); transition: transform .2s ease, box-shadow .2s ease; }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 22px 55px rgba(13, 27, 42, .23); }
+.project-card-featured { display: grid; grid-template-columns: minmax(300px, 41%) 1fr; }
+.project-content { display: flex; flex-direction: column; justify-content: center; padding: 2rem 2.2rem; }
+.project-topline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; margin-bottom: .55rem; }
+.project-role, .project-date { margin: 0; color: #7eb0ff; font-size: .82rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.project-date { color: #9baabb; }
+.project-card h3 { margin-bottom: 1rem; color: #fff; font-family: "Libre Franklin", sans-serif; font-size: clamp(1.45rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -.025em; }
+.project-card .project-content > p:not(.project-role):not(.project-date) { margin-bottom: .8rem; color: #c4ced9; line-height: 1.72; }
+.project-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .6rem; }
+.project-tags span { padding: .48rem .82rem; border: 1px solid rgba(126, 176, 255, .2); border-radius: 999px; color: #fff; background: #174f79; font-size: .83rem; font-weight: 700; }
+.project-media { position: relative; align-self: center; width: 100%; overflow: hidden; background: #0c1420; }
+.project-media-radio { aspect-ratio: 684 / 470; }
+.project-media-sankey { aspect-ratio: 684 / 350; }
+.project-media img { position: absolute; top: 0; left: 0; width: 272.25%; max-width: none; height: auto; }
+.project-media-radio img { transform: translate(-2.04%, -1.85%); }
+.project-media-sankey img { transform: translate(-2.04%, -47.65%); }
+.project-card-text .project-content { min-height: 250px; padding: 2.2rem; }
 
 .contact-section { background: var(--blue-soft); }
 .contact-copy { max-width: 700px; color: var(--muted); font-size: 1.1rem; line-height: 1.7; }
@@ -83,11 +96,19 @@ footer a { color: #fff; font-weight: 700; text-decoration: none; }
   .hero h1 { font-size: 3.65rem; }
   .hero .btn { width: 100%; }
   .section-pad { padding: 4rem 0; }
-  .info-card, .skill-card, .project-card { padding: 1.4rem; }
+  .info-card, .skill-card { padding: 1.4rem; }
   .timeline { margin-left: .45rem; padding-left: 1.7rem; }
   .timeline-item::before { left: -2.2rem; }
   .timeline-meta { flex-direction: column; }
-  .project-card h3 { min-height: 0; }
+  .project-content, .project-card-text .project-content { padding: 1.5rem; }
+}
+
+@media (max-width: 991.98px) {
+  .project-card-featured { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 575.98px) {
+  .project-topline { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
