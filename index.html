@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Resume website for Aaron Leeb, a Computer Science student and Quality Assurance Engineer Intern.">
   <title>Aaron Leeb | Resume</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#resumeNav" data-bs-offset="90" tabindex="0">
+<body>
   <nav id="resumeNav" class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="#home">AL<span>.</span></a>
@@ -35,10 +32,10 @@
     <div class="container position-relative">
       <div class="row align-items-center g-5">
         <div class="col-lg-8">
-          <p class="eyebrow mb-3">Hello, I’m</p>
+
           <h1>Aaron <span>Leeb</span></h1>
           <p class="hero-title">Computer Science Student &amp; Quality Assurance Engineer</p>
-          <p class="hero-copy">I build dependable software, improve product quality, and bring an organized, creative approach to technical problem-solving.</p>
+
           <div class="d-flex flex-wrap gap-3 mt-4">
             <a class="btn btn-accent btn-lg" href="#projects">View My Work</a>
             <a class="btn btn-outline-light btn-lg" href="mailto:leebaaron@outlook.com">Email Me</a>
@@ -73,27 +70,29 @@
           <p class="section-kicker">Academic Background</p>
           <h2 class="section-title">Education</h2>
         </div>
-        <div class="row g-4">
-          <div class="col-lg-7">
-            <article class="info-card h-100">
-              <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
-                <div>
-                  <p class="card-label">Expected Fall 2026</p>
-                  <h3>Bachelor of Science in Computer Science</h3>
-                  <p class="mb-0 text-secondary">Minnesota State University Mankato</p>
-                </div>
-                <span class="stat-badge align-self-start">GPA 3.67</span>
-              </div>
-              <p class="achievement mb-0">Dean’s List</p>
-            </article>
-          </div>
-          <div class="col-lg-5">
-            <article class="info-card h-100">
-              <p class="card-label">Graduated Fall 2020</p>
+        <div class="education-list">
+          <article class="education-item">
+            <div class="education-marker" aria-hidden="true"></div>
+            <div class="education-main">
+              <h3>Bachelor of Science in Computer Science</h3>
+              <p class="education-school">Minnesota State University Mankato</p>
+              <p class="education-honor">Dean’s List</p>
+            </div>
+            <div class="education-meta">
+              <p>Expected Fall 2026</p>
+              <span>GPA 3.67</span>
+            </div>
+          </article>
+          <article class="education-item">
+            <div class="education-marker" aria-hidden="true"></div>
+            <div class="education-main">
               <h3>Associate of Science in Music Technology</h3>
-              <p class="mb-0 text-secondary">Broward College</p>
-            </article>
-          </div>
+              <p class="education-school">Broward College</p>
+            </div>
+            <div class="education-meta">
+              <p>Graduated Fall 2020</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -204,21 +203,22 @@
       </div>
     </section>
 
-    <section id="contact" class="section-pad contact-section">
-      <div class="container text-center">
-        <p class="section-kicker">Get In Touch</p>
-        <h2 class="section-title">Let’s build something dependable.</h2>
-        <p class="contact-copy mx-auto">I’m interested in opportunities where I can contribute to software quality, engineering, and thoughtful technical problem-solving.</p>
-        <div class="contact-links d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mt-4">
-          <a href="mailto:leebaaron@outlook.com">leebaaron@outlook.com</a>
-          <span class="d-none d-md-inline" aria-hidden="true">•</span>
-          <a href="tel:+15077795151">507-779-5151</a>
-          <span class="d-none d-md-inline" aria-hidden="true">•</span>
-          <a href="https://www.linkedin.com/in/aaron-leeb" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<section class="contact-section">
+    <div class="get-in-touch">
+        <div class="git-left">
+            <h2>Get In Touch</h2>
+            <p>Let’s build something dependable.</p>
+            <p>I’m interested in opportunities where I can contribute to software quality, engineering, and thoughtful technical problem-solving.</p>
         </div>
-        <p class="location mt-4 mb-0">Mankato, Minnesota</p>
-      </div>
-    </section>
+
+        <div class="git-right">
+            <p>leebaaron@outlook.com • 507-779-5151 • LinkedIn</p>
+            <p class="location">Mankato, Minnesota</p>
+        </div>
+    </div>
+</section>
+
+
   </main>
 
   <footer>
